@@ -1,0 +1,104 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "tensorflow",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tensorflow",
+        "description": "tensorflow",
+        "detail": "tensorflow",
+        "documentation": {}
+    },
+    {
+        "label": "image",
+        "importPath": "tensorflow.keras.preprocessing",
+        "description": "tensorflow.keras.preprocessing",
+        "isExtraImport": true,
+        "detail": "tensorflow.keras.preprocessing",
+        "documentation": {}
+    },
+    {
+        "label": "BytesIO",
+        "importPath": "io",
+        "description": "io",
+        "isExtraImport": true,
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "prever",
+        "kind": 2,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "def prever():\n    try:\n        if 'imagem' not in request.files:\n            return jsonify({\"erro\": \"Nenhuma imagem encontrada\"}), 400\n        imagem = request.files['imagem']\n        imagem_stream = BytesIO(imagem.read())\n        img = image.load_img(imagem_stream, target_size=(150, 150))\n        img = image.img_to_array(img) \n        img = np.expand_dims(img, axis=0)\n        img /= 255.",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = Flask(__name__)\nCORS(app)\nclasses = ['Adulto', 'Hentai', 'Normal', 'Sensual', 'Violento']\nmodelo = tf.keras.models.load_model(\"modelo.h5\")\n@app.route('/prever', methods=['POST'])\ndef prever():\n    try:\n        if 'imagem' not in request.files:\n            return jsonify({\"erro\": \"Nenhuma imagem encontrada\"}), 400\n        imagem = request.files['imagem']",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "classes",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "classes = ['Adulto', 'Hentai', 'Normal', 'Sensual', 'Violento']\nmodelo = tf.keras.models.load_model(\"modelo.h5\")\n@app.route('/prever', methods=['POST'])\ndef prever():\n    try:\n        if 'imagem' not in request.files:\n            return jsonify({\"erro\": \"Nenhuma imagem encontrada\"}), 400\n        imagem = request.files['imagem']\n        imagem_stream = BytesIO(imagem.read())\n        img = image.load_img(imagem_stream, target_size=(150, 150))",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "modelo",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "modelo = tf.keras.models.load_model(\"modelo.h5\")\n@app.route('/prever', methods=['POST'])\ndef prever():\n    try:\n        if 'imagem' not in request.files:\n            return jsonify({\"erro\": \"Nenhuma imagem encontrada\"}), 400\n        imagem = request.files['imagem']\n        imagem_stream = BytesIO(imagem.read())\n        img = image.load_img(imagem_stream, target_size=(150, 150))\n        img = image.img_to_array(img) ",
+        "detail": "app",
+        "documentation": {}
+    }
+]
