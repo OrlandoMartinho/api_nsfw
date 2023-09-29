@@ -3,5 +3,5 @@ Flask-CORS;
 numpy;
 tensorflow;
 Pillow;
-gunicorn;
+
 
